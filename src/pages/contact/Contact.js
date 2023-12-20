@@ -16,6 +16,7 @@ const Contact = () => {
         const subject = form.subject.value;
         const message = form.message.value;
         const details = { email, subject, message };
+        toast.info('Trying to send the message!');
         fetch('https://developers-portfolio-server.vercel.app/send-email', {
             method: 'POST',
             headers: {
