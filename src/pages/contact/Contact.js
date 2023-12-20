@@ -16,7 +16,6 @@ const Contact = () => {
         const subject = form.subject.value;
         const message = form.message.value;
         const details = { email, subject, message };
-        toast.info('Trying to send the message!');
         fetch('https://developers-portfolio-server.vercel.app/send-email', {
             method: 'POST',
             headers: {
@@ -54,8 +53,8 @@ const Contact = () => {
 
             <SectionHeader text='Connect'>With Me</SectionHeader>
 
-            <div className='flex flex-col-reverse md:flex-row justify-evenly items-center ml-5 md:ml-0'>
-                <div className='font-semibold w-80 mr-4'>
+            <div className='flex flex-col-reverse md:flex-row items-center justify-start'>
+                <div className='font-semibold w-full md:w-80 ml-5 md:ml-0 mr-5'>
                     {
                         contactInfos.map((info, idx) => <div key={idx} className='mb-3'>
                             <p>{info.contactType}</p>
