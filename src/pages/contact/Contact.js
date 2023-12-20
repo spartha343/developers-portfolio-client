@@ -4,8 +4,35 @@ import MyButton from '../../components/MyButton';
 import { FaPhoneVolume, FaWhatsapp } from "react-icons/fa6";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { Helmet } from 'react-helmet';
+import { toast } from 'react-toastify';
 
 const Contact = () => {
+
+    const handleSendMessage = (event) => {
+        event.preventDefault();
+        toast.info('Trying to send your message');
+        const form = event.target;
+        const email = form.email.value;
+        const subject = form.subject.value;
+        const message = form.message.value;
+        const details = { email, subject, message };
+        fetch('https://developers-portfolio-server.vercel.app/send-email', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(details)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 200) {
+                    toast.success('Successfully sent the message!');
+                }
+                else {
+                    toast.error(`Error ${data.status}: ${data.message}`);
+                }
+            })
+    }
 
     const contactInfos = [
         { contactType: 'Phone', contactIcon: <FaPhoneVolume />, contactAddress: '+8801624457470' },
@@ -21,15 +48,15 @@ const Contact = () => {
     return (
         <div>
             <Helmet>
-                <title>Partha's Portflio | Home</title>
+                <title>Partha's Portflio | Contact</title>
             </Helmet>
 
             <SectionHeader text='Connect'>With Me</SectionHeader>
 
-            <div className='flex flex-col-reverse md:flex-row justify-evenly items-center'>
+            <div className='flex flex-col-reverse md:flex-row justify-evenly items-center ml-5 md:ml-0'>
                 <div className='font-semibold w-80 mr-4'>
                     {
-                        contactInfos.map(info => <div className='mb-3'>
+                        contactInfos.map((info, idx) => <div key={idx} className='mb-3'>
                             <p>{info.contactType}</p>
                             <div className='flex items-center'>
                                 <p className='text-secondary'>{info.contactIcon}</p>
@@ -49,27 +76,29 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className='w-full mb-5'>
-                    <form>
+                    <form onSubmit={handleSendMessage}>
                         <div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" class="input input-bordered" />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Subject</span>
                                 </label>
-                                <input type="text" placeholder="password" class="input input-bordered" />
+                                <input type="text" name='subject' placeholder="Subject" className="input input-bordered" required />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Your message</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Your message</span>
                                 </label>
-                                <textarea className="textarea textarea-bordered w-full h-24" placeholder="Bio"></textarea> <br />
+                                <textarea className="textarea textarea-bordered w-full h-24" name='message' placeholder="Please, write your message here" required></textarea> <br />
                             </div>
-                            <MyButton>Send message</MyButton>
+                            <MyButton>
+                                <input type="submit" value="Send Message" className='cursor-pointer' />
+                            </MyButton>
                         </div>
                     </form>
                 </div>
