@@ -54,6 +54,8 @@ const Skills = () => {
         },
     ];
 
+    const description = 'I love to explore new web technologies and solve web related issues'
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);
@@ -64,7 +66,7 @@ const Skills = () => {
                 <title>Partha's Portflio | Skills</title>
             </Helmet>
 
-            <SectionHeader text='Skills'>Of Mine</SectionHeader>
+            <SectionHeader text='Skills' description={description}>Of Mine</SectionHeader>
 
             <div>
                 {

@@ -33,9 +33,12 @@ const ProjectsSection = () => {
             backEnd: 'https://github.com/spartha343/ssf-news-server',
         },
     ];
+
+    const description = 'I love to develop creative projects and explore new technologies'
+
     return (
         <section className='my-56'>
-            <SectionHeader text={'My'} >Projects</SectionHeader>
+            <SectionHeader text={'My'} description={description} >Projects</SectionHeader>
             <div className='grid gap-10  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5'>
                 {
                     projects.map(project => <ProjectCard project={project} />)

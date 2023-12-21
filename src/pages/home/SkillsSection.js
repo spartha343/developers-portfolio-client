@@ -20,9 +20,11 @@ const SkillsSection = () => {
         { itemName: 'Tailwind', itemIcon: <BiLogoTailwindCss size={40} />, link: 'https://tailwindcss.com/' },
     ];
 
+    const description = 'I like to explore new web technologies and develop well-optimized app'
+
     return (
         <div className='my-20'>
-            <SectionHeader text={'My'} >Skills</SectionHeader>
+            <SectionHeader text={'My'} description={description} >Skills</SectionHeader>
             <CardsContainer items={skills}></CardsContainer>
             <ExploreButton link='/skills' text='Explore All' />
         </div>

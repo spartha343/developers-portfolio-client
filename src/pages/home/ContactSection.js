@@ -17,10 +17,11 @@ const ContactSection = () => {
         { itemName: 'Email', itemIcon: <MdOutlineMailOutline size={40} />, link: 'mailto:spartha343@gmail.com', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
         { itemName: 'Phone', itemIcon: <FiPhoneCall size={40} />, link: 'tel:+8801624457470' },
     ];
+    const description = 'If you have any queries or even just to say hello, hit me up and i will get to you soon';
 
     return (
         <section>
-            <SectionHeader text={'Connect'} >With Me</SectionHeader>
+            <SectionHeader text={'Connect'} description={description} >With Me</SectionHeader>
             <CardsContainer items={contactInfos}></CardsContainer>
             <ExploreButton link='/contact' text='Explore All' />
         </section>

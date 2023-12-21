@@ -88,6 +88,7 @@ const Projects = () => {
         },
     ];
 
+    const description = 'I love to develop beautiful application and explore new technologies'
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -98,7 +99,7 @@ const Projects = () => {
             <Helmet>
                 <title>Partha's Portflio | Projects</title>
             </Helmet>
-            <SectionHeader text='Projects'>of Mine</SectionHeader>
+            <SectionHeader text='Projects' description={description}>of Mine</SectionHeader>
             <div className='grid gap-10  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5'>
                 {
                     projects.map(project => <ProjectCard project={project} />)

@@ -8,6 +8,7 @@ import { FaUserGraduate } from "react-icons/fa6";
 import ExploreButton from './ExploreButton';
 
 const AboutSection = () => {
+    const description = 'I love to develop beautiful web application and explore new web technologies';
 
     const myInfos = [
         {
@@ -33,7 +34,7 @@ const AboutSection = () => {
 
     return (
         <section className='my-52'>
-            <SectionHeader text={'About'} >Me</SectionHeader>
+            <SectionHeader text={'About'} description={description} >Me</SectionHeader>
             <div className='grid gap-10  grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     myInfos.map(myInfo => <MyInfoCard myInfo={myInfo} />)

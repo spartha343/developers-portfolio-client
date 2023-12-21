@@ -7,13 +7,15 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
 
+    const description = 'I love to develop beautiful web application and explore new web technologies';
+
     const details = [
         { fieldName: 'Name', fieldValue: 'Partha Debnath' },
-        { fieldName: 'Phone', fieldValue: '+8801624457470' },
-        { fieldName: 'Email', fieldValue: 'spartha343@gmail.com' },
-        { fieldName: 'Education', fieldValue: `B.Sc in Mathematics, Shahjalal University of Science And Technology, Sylhet` },
+        { fieldName: 'Phone', fieldValue: '+8801624457470', link: 'tel:+8801624457470' },
+        { fieldName: 'Email', fieldValue: 'spartha343@gmail.com', link: 'mailto:spartha343@gmail.com' },
+        { fieldName: 'Education', fieldValue: `B.Sc in Mathematics, Shahjalal University of Science And Technology, Sylhet`, link: 'https://www.sust.edu/' },
         { fieldName: 'Languages', fieldValue: 'Bangla(native), English(good)' },
-        { fieldName: 'Address', fieldValue: 'Narayanganj, Dhaka, Bangladesh.' },
+        { fieldName: 'Address', fieldValue: 'Narayanganj, Dhaka, Bangladesh.', link: 'https://www.google.com/maps/place/Narayanganj' },
     ];
 
     useEffect(() => {
@@ -26,7 +28,7 @@ const About = () => {
                 <title>Partha's Portflio | About</title>
             </Helmet>
 
-            <SectionHeader text='About'>Myself</SectionHeader>
+            <SectionHeader text='About' description={description}>Myself</SectionHeader>
 
             <div class="flex items-center flex-col lg:flex-row">
                 <div class="mb-2 w-full lg:w-1/2">
@@ -39,7 +41,11 @@ const About = () => {
                                 {
                                     details.map((detail, idx) => <tr key={idx}>
                                         <td>{detail.fieldName}</td>
-                                        <td>{detail.fieldValue}</td>
+                                        <td>
+                                            <Link to={detail?.link}>
+                                                {detail.fieldValue}
+                                            </Link>
+                                        </td>
                                     </tr>)
                                 }
                             </tbody>

@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import SectionHeader from '../../components/SectionHeader';
 import MyButton from '../../components/MyButton';
-import { FaPhoneVolume, FaWhatsapp } from "react-icons/fa6";
+import { FaLinkedinIn, FaPhone, FaPhoneVolume, FaWhatsapp } from "react-icons/fa6";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { FaFacebook } from "react-icons/fa";
 
 const Contact = () => {
 
@@ -41,6 +42,7 @@ const Contact = () => {
         { contactType: "What's App", contactIcon: <FaWhatsapp />, contactAddress: '+8801624457470', link: 'https://api.whatsapp.com/send/?phone=%2B8801624457470&text&type=phone_number&app_absent=0' },
         { contactType: "Dribbble", contactIcon: <FaWhatsapp />, contactAddress: 'Coming Sooon..' },
     ];
+    const description = 'If you have any queries or even just to say hello, please fill out the form and i will get to you soon';
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -52,7 +54,7 @@ const Contact = () => {
                 <title>Partha's Portflio | Contact</title>
             </Helmet>
 
-            <SectionHeader text='Connect'>With Me</SectionHeader>
+            <SectionHeader text='Connect' description={description} >With Me</SectionHeader>
 
             <div className='flex flex-col-reverse md:flex-row items-center justify-start'>
                 <div className='font-semibold w-full md:w-80 mr-5 grid grid-cols-1'>
@@ -67,12 +69,12 @@ const Contact = () => {
                     }
 
                     <div>
-                        <p>Social Profiles</p>
-                        <div className='text-primary text-2xl'>
-                            <i className="fa-brands fa-facebook mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700"></i>
-                            <i className="fa-brands fa-instagram mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700"></i>
-                            <i className="fa-brands fa-linkedin-in mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700"></i>
-                            <i className="fa-brands fa-twitter mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700"></i>
+                        <p className='my-3'>Social Profiles</p>
+                        <div className='text-secondary text-2xl flex'>
+                            <FaPhone size={18} className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            <FaWhatsapp className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            <FaFacebook className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            <FaLinkedinIn className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
                         </div>
                     </div>
                 </div>
