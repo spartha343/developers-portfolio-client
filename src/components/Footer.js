@@ -20,7 +20,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='text-center mt-6 mb-3'>
-                <p>Copyright © 2023 - All rights are reserved</p>
+                <p>Copyright © {new Date().getFullYear()} - All rights are reserved</p>
             </div>
         </footer>
     );

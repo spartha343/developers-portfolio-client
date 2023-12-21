@@ -17,39 +17,39 @@ const Skills = () => {
         {
             skillType: 'Languages',
             containedSkills: [
-                { itemName: 'HTML5', itemIcon: <ImHtmlFive2 size={40} />, bgColor: 'bg-gradient-to-r from-secondary to-primary' },
-                { itemName: 'CSS3', itemIcon: <RiCss3Line size={40} /> },
-                { itemName: 'JavaScript', itemIcon: <RiJavascriptLine size={40} />, bgColor: 'bg-gradient-to-r from-secondary to-primary' },
+                { itemName: 'HTML5', itemIcon: <ImHtmlFive2 size={40} />, link: 'https://html.com/html5/', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
+                { itemName: 'CSS3', itemIcon: <RiCss3Line size={40} />, link: 'https://css3.com/' },
+                { itemName: 'JavaScript', itemIcon: <RiJavascriptLine size={40} />, link: 'https://www.javascript.com/', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
             ]
         },
         {
             skillType: 'Frameworks',
             containedSkills: [
-                { itemName: 'Bootstrap', itemIcon: <FaBootstrap size={40} /> },
-                { itemName: 'Tailwind', itemIcon: <BiLogoTailwindCss size={40} />, bgColor: 'bg-gradient-to-r from-secondary to-primary' },
-                { itemName: 'Express.js', itemIcon: <SiExpress size={40} /> },
+                { itemName: 'Bootstrap', itemIcon: <FaBootstrap size={40} />, link: 'https://getbootstrap.com/' },
+                { itemName: 'Tailwind', itemIcon: <BiLogoTailwindCss size={40} />, link: 'https://tailwindcss.com/', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
+                { itemName: 'Express.js', itemIcon: <SiExpress size={40} />, link: 'https://expressjs.com/' },
             ]
         },
         {
             skillType: 'Libraries',
             containedSkills: [
-                { itemName: 'React', itemIcon: <FaReact size={40} />, bgColor: 'bg-gradient-to-r from-secondary to-primary' },
+                { itemName: 'React', itemIcon: <FaReact size={40} />, link: 'https://react.dev/', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
             ]
         },
         {
             skillType: 'Authentication/authorization',
             containedSkills: [
-                { itemName: 'Firebase', itemIcon: <IoLogoFirebase size={40} /> },
-                { itemName: 'JWT', itemIcon: <SiJsonwebtokens size={40} />, bgColor: 'bg-gradient-to-r from-secondary to-primary' },
+                { itemName: 'Firebase', itemIcon: <IoLogoFirebase size={40} />, link: 'https://firebase.google.com/' },
+                { itemName: 'JWT', itemIcon: <SiJsonwebtokens size={40} />, link: 'https://jwt.io/', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
             ]
         },
         {
             skillType: 'Familiar With',
             containedSkills: [
-                { itemName: 'MongoDB', itemIcon: <SiMongodb size={40} />, bgColor: 'bg-gradient-to-r from-secondary to-primary' },
-                { itemName: 'GitHub', itemIcon: <FaGithub size={40} /> },
-                { itemName: 'Node.js', itemIcon: <FaNode size={40} />, bgColor: 'bg-gradient-to-r from-secondary to-primary' },
-                { itemName: 'Netlify', itemIcon: <SiNetlify size={40} /> },
+                { itemName: 'MongoDB', itemIcon: <SiMongodb size={40} />, link: 'https://www.mongodb.com/', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
+                { itemName: 'GitHub', itemIcon: <FaGithub size={40} />, link: 'https://github.com/spartha343?tab=repositories' },
+                { itemName: 'Node.js', itemIcon: <FaNode size={40} />, link: 'https://nodejs.org/en/learn/getting-started/introduction-to-nodejs', bgColor: 'bg-gradient-to-r from-secondary to-primary' },
+                { itemName: 'Netlify', itemIcon: <SiNetlify size={40} />, link: 'https://www.netlify.com/' },
             ]
         },
     ];

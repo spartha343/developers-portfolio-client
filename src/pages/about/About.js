@@ -3,6 +3,7 @@ import SectionHeader from '../../components/SectionHeader';
 import computerman from '../../assets/computerMan.jpg'
 import MyButton from '../../components/MyButton';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const About = () => {
 
@@ -45,7 +46,9 @@ const About = () => {
                         </table>
                     </div>
                     <div className='px-3 my-5'>
-                        <MyButton>Hire Me !</MyButton>
+                        <Link to='/contact'>
+                            <MyButton>Hire Me !</MyButton>
+                        </Link>
                     </div>
                 </div>
             </div>

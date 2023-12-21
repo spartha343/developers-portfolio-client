@@ -5,6 +5,7 @@ import { FaPhoneVolume, FaWhatsapp } from "react-icons/fa6";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { Helmet } from 'react-helmet';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
 
@@ -35,9 +36,9 @@ const Contact = () => {
     }
 
     const contactInfos = [
-        { contactType: 'Phone', contactIcon: <FaPhoneVolume />, contactAddress: '+8801624457470' },
-        { contactType: 'Email', contactIcon: <MdOutlineAttachEmail />, contactAddress: 'spartha343@gmail.com' },
-        { contactType: "What's App", contactIcon: <FaWhatsapp />, contactAddress: '+8801624457470' },
+        { contactType: 'Phone', contactIcon: <FaPhoneVolume />, contactAddress: '+8801624457470', link: 'tel:+8801624457470' },
+        { contactType: 'Email', contactIcon: <MdOutlineAttachEmail />, contactAddress: 'spartha343@gmail.com', link: 'mailto:spartha343@gmail.com' },
+        { contactType: "What's App", contactIcon: <FaWhatsapp />, contactAddress: '+8801624457470', link: 'https://api.whatsapp.com/send/?phone=%2B8801624457470&text&type=phone_number&app_absent=0' },
         { contactType: "Dribbble", contactIcon: <FaWhatsapp />, contactAddress: 'Coming Sooon..' },
     ];
 
@@ -54,15 +55,15 @@ const Contact = () => {
             <SectionHeader text='Connect'>With Me</SectionHeader>
 
             <div className='flex flex-col-reverse md:flex-row items-center justify-start'>
-                <div className='font-semibold w-full md:w-80 ml-5 md:ml-0 mr-5'>
+                <div className='font-semibold w-full md:w-80 mr-5 grid grid-cols-1'>
                     {
-                        contactInfos.map((info, idx) => <div key={idx} className='mb-3'>
+                        contactInfos.map((info, idx) => <Link to={info?.link} key={idx} className='p-2 mb-2 rounded-lg shadow-md hover:shadow-xl'>
                             <p>{info.contactType}</p>
                             <div className='flex items-center'>
                                 <p className='text-secondary'>{info.contactIcon}</p>
                                 <p className='ml-1'>{info.contactAddress}</p>
                             </div>
-                        </div>)
+                        </Link>)
                     }
 
                     <div>
