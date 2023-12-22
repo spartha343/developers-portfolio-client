@@ -88,7 +88,7 @@ const Projects = () => {
         },
     ];
 
-    const description = 'I love to develop beautiful application and explore new technologies'
+    const description = 'I continuously try to learn new technologies and develop new applications';
 
     useEffect(() => {
         window.scrollTo(0, 0)

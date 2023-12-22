@@ -34,6 +34,7 @@ const Contact = () => {
                     toast.error(`Error ${data.status}: ${data.message}`);
                 }
             })
+        form.reset();
     }
 
     const contactInfos = [
@@ -59,7 +60,7 @@ const Contact = () => {
             <div className='flex flex-col-reverse md:flex-row items-center justify-start'>
                 <div className='font-semibold w-full md:w-80 mr-5 grid grid-cols-1'>
                     {
-                        contactInfos.map((info, idx) => <Link to={info?.link} key={idx} className='p-2 mb-2 rounded-lg shadow-md hover:shadow-xl'>
+                        contactInfos.map((info, idx) => <Link to={info?.link} key={idx} className='p-2 mb-2 rounded-lg shadow-md hover:shadow-xl duration-500 ease-in-out'>
                             <p>{info.contactType}</p>
                             <div className='flex items-center'>
                                 <p className='text-secondary'>{info.contactIcon}</p>
@@ -71,10 +72,18 @@ const Contact = () => {
                     <div>
                         <p className='my-3'>Social Profiles</p>
                         <div className='text-secondary text-2xl flex'>
-                            <FaPhone size={18} className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
-                            <FaWhatsapp className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
-                            <FaFacebook className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
-                            <FaLinkedinIn className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            <Link to='tel:+8801624457470'>
+                                <FaPhone size={18} className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            </Link>
+                            <Link to='mailto:spartha343@gmail.com'>
+                                <FaWhatsapp className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            </Link>
+                            <Link to='https://www.facebook.com/partho.debnath343'>
+                                <FaFacebook className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            </Link>
+                            <Link to='/'>
+                                <FaLinkedinIn className='mr-4 relative bottom-0 hover:bottom-2 cursor-pointer ease-in-out duration-700' />
+                            </Link>
                         </div>
                     </div>
                 </div>

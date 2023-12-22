@@ -54,7 +54,7 @@ const Skills = () => {
         },
     ];
 
-    const description = 'I love to explore new web technologies and solve web related issues'
+    const description = 'I love to explore new web technologies and develop well-optimized web applications'
 
     useEffect(() => {
         window.scrollTo(0, 0)
