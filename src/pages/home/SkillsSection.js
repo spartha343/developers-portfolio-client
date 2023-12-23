@@ -20,7 +20,7 @@ const SkillsSection = () => {
         { itemName: 'Tailwind', itemIcon: <BiLogoTailwindCss size={40} />, link: 'https://tailwindcss.com/' },
     ];
 
-    const description = 'I love to explore new web technologies and develop well-optimized web applications'
+    const description = 'I like to explore new web technologies and develop well-optimized app'
 
     return (
         <div className='my-20'>

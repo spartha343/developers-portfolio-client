@@ -34,7 +34,7 @@ const ProjectsSection = () => {
         },
     ];
 
-    const description = 'I continuously try to learn new technologies and develop new applications'
+    const description = 'I love to develop creative projects and explore new technologies'
 
     return (
         <section className='my-56'>
