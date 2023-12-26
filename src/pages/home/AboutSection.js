@@ -37,7 +37,7 @@ const AboutSection = () => {
             <SectionHeader text={'About'} description={description} >Me</SectionHeader>
             <div className='grid gap-10  grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
-                    myInfos.map(myInfo => <MyInfoCard myInfo={myInfo} />)
+                    myInfos.map((myInfo, idx) => <MyInfoCard myInfo={myInfo} key={idx} />)
                 }
             </div>
             <ExploreButton link='/about' text='Learn More' />
