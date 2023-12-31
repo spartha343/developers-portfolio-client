@@ -37,7 +37,7 @@ const Header = () => {
             </div>
             <div className="navbar-end mr-2">
                 <MyButton>
-                    <Link to='/'>Resume</Link>
+                    <Link to='https://drive.google.com/file/d/1eCml9Vimd_etkNklfAvUvY7O7M5IQrTD/view?usp=sharing'>Resume</Link>
                 </MyButton>
             </div>
         </div>
