@@ -13,9 +13,9 @@ const ProjectDetailsHeader = ({projectData}) => {
           <h1 className="mb-5 text-5xl font-bold">{title}</h1>
           <p className="mb-5 text-xl">{description}</p>
           <div className='mt-10'>
-          <Link to={backEnd}><button className={`btn btn-sm btn-primary mr-3 ${backEnd === '' && 'btn-disabled'}`}>Back End</button></Link>
-          <Link to={frontEnd}><button className={`btn btn-sm btn-primary mr-3 ${backEnd === '' && 'btn-disabled'}`}>Front End</button></Link>
-          <Link to={liveLink}><button className="btn btn-sm btn-primary">Live Site <FaArrowRight /></button></Link>
+          <Link to={backEnd}><button className={`btn btn-sm btn-primary m-3 ${backEnd === '' && 'btn-disabled'}`}>Back End</button></Link>
+          <Link to={frontEnd}><button className={`btn btn-sm btn-primary m-3 ${backEnd === '' && 'btn-disabled'}`}>Front End</button></Link>
+          <Link to={liveLink}><button className="btn btn-sm btn-primary m-3">Live Site <FaArrowRight /></button></Link>
           </div>
         </div>
       </div>
